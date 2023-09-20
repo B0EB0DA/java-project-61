@@ -15,6 +15,7 @@ public class Engine {
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
             System.out.println("5 - Progression");
+            System.out.println("6 - Prime");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
             int intAnswer = consoleScanner.nextInt();
@@ -34,6 +35,7 @@ public class Engine {
                 case 3 -> theGame(new Calc());
                 case 4 -> theGame(new GCD());
                 case 5 -> theGame(new Progression());
+                case 6 -> theGame(new Prime());
             }
         };
         consoleScanner.close();
