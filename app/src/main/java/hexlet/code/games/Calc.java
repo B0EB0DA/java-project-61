@@ -12,25 +12,29 @@ public class Calc implements Game {
     }
     public String nextQuestion() {
 
-        firstOperand = Rand.Get();
-        secondOperand = Rand.Get();
-        operandCode = Rand.Get(1, 3);
+        firstOperand = Rand.get();
+        secondOperand = Rand.get();
+        operandCode = Rand.get(1, 3);
 
-        if (operandCode == 1)
+        if (operandCode == 1) {
             operandStr = "+";
-        else if (operandCode == 2)
+        } else if (operandCode == 2) {
             operandStr = "-";
-        else
+        } else {
             operandStr = "*";
+        }
 
         return String.valueOf(firstOperand) + " " + operandStr + " " + String.valueOf(secondOperand);
     }
     public String getAnswer() {
-        if (operandCode == 1)
+        if (operandCode == 1) {
             return String.valueOf(firstOperand + secondOperand);
-        else if (operandCode == 2)
-            return String.valueOf(firstOperand - secondOperand);
-        else
-            return String.valueOf(firstOperand * secondOperand);
+        } else {
+            if (operandCode == 2) {
+                return String.valueOf(firstOperand - secondOperand);
+            } else {
+                return String.valueOf(firstOperand * secondOperand);
+            }
+        }
     }
 }

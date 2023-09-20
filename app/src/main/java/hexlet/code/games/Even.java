@@ -7,7 +7,7 @@ public class Even implements Game {
         return gameHeader;
     }
     public String nextQuestion() {
-        theOperand = Rand.Get();
+        theOperand = Rand.get();
         return String.valueOf(theOperand);
     }
     public String getAnswer() {
