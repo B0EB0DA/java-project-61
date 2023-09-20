@@ -27,7 +27,7 @@ public class Progression implements Game{
 
         for (int i = progressionStart + progressionStep; i < progressionStart + progressionLength * progressionStep; i += progressionStep) {
             if (i == missingMember) {
-                sb.append(" .. ");
+                sb.append(" ..");
             } else {
                 sb.append(" ");
                 sb.append(String.valueOf(i));
