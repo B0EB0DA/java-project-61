@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Game;
 import java.util.Scanner;
 public class Engine {
@@ -14,6 +15,7 @@ public class Engine {
             System.out.println("1 - Greet");
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
+            System.out.println("4 - GCD");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
             int intAnswer = consoleScanner.nextInt();
@@ -31,6 +33,7 @@ public class Engine {
             switch (intAnswer) {
                 case 2 -> theGame(new Even());
                 case 3 -> theGame(new Calc());
+                case 4 -> theGame(new GCD());
             }
         };
         consoleScanner.close();
@@ -41,7 +44,8 @@ public class Engine {
         System.out.println(g.getHeader());
 
         for (int i = 0; i < 3; i++) {
-            System.out.print("Question: " + g.nextQuestion() + " ");
+            System.out.println("Question: " + g.nextQuestion());
+            System.out.print("Your answer: ");
             String userAnswer = consoleScanner.next();
             String correctAnswer = g.getAnswer();
             if (userAnswer.equalsIgnoreCase(correctAnswer)) {
