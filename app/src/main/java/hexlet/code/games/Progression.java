@@ -16,7 +16,7 @@ public class Progression implements Game{
     }
     public String nextQuestion() {
 
-        progressionStart = Rand.Get();                                  // Progression start number
+        progressionStart = Rand.Get(1, 89);                                  // Progression start number
         progressionLength = Rand.Get(5, 10);                            // Progression length
         progressionStep = Rand.Get(2, 9);                               // Progression step
         missingMemberIndex = Rand.Get(1, progressionLength - 2);        // Progression missing member index,
