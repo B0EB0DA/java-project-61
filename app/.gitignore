@@ -5,13 +5,13 @@ build/
 !**/src/test/**/build/
 
 ### Added by me
-.idea/
-build.gradle
-config/
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
+#.idea/
+#build.gradle
+#config/
+#gradle/
+#gradlew
+#gradlew.bat
+#settings.gradle
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
