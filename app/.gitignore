@@ -4,6 +4,15 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Added by me
+.idea/
+build.grandle
+config/
+grandle/
+grandlew
+grandlew.bat
+settings.grandle
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
