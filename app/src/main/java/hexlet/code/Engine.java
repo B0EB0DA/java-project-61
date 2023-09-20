@@ -30,12 +30,23 @@ public class Engine {
             userName = consoleScanner.next();
             System.out.println("Hello, " + userName + "!");
             switch (intAnswer) {
-                case 2 -> theGame(new Even());
-                case 3 -> theGame(new Calc());
-                case 4 -> theGame(new GCD());
-                case 5 -> theGame(new Progression());
-                case 6 -> theGame(new Prime());
-                default -> throw new IllegalStateException("Unexpected value: " + intAnswer);
+                case 2:
+                    theGame(new Even());
+                    break;
+                case 3:
+                    theGame(new Calc());
+                    break;
+                case 4:
+                    theGame(new GCD());
+                    break;
+                case 5:
+                    theGame(new Progression());
+                    break;
+                case 6:
+                    theGame(new Prime());
+                    break;
+                default:
+                    break;
             }
         }
         consoleScanner.close();
