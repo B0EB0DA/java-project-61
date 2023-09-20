@@ -6,12 +6,12 @@ build/
 
 ### Added by me
 .idea/
-build.grandle
+build.gradle
 config/
-grandle/
-grandlew
-grandlew.bat
-settings.grandle
+gradle/
+gradlew
+gradlew.bat
+settings.gradle
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
