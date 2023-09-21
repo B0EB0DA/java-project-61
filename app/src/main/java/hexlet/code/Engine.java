@@ -10,6 +10,11 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 public class Engine {
     private static String userName;
+    private static final int GAME_2_EVEN = 2;
+    private static final int GAME_3_CALC = 3;
+    private static final int GAME_4_GCD = 4;
+    private static final int GAME_5_PROGRESSION = 5;
+    private static final int GAME_6_PRIME = 6;
     private static Scanner consoleScanner = new Scanner(System.in);
     static void theInterface() {
         System.out.println("Please enter the game number and press Enter.");
@@ -30,19 +35,19 @@ public class Engine {
             userName = consoleScanner.next();
             System.out.println("Hello, " + userName + "!");
             switch (intAnswer) {
-                case 2:
+                case GAME_2_EVEN:
                     theGame(new Even());
                     break;
-                case 3:
+                case GAME_3_CALC:
                     theGame(new Calc());
                     break;
-                case 4:
+                case GAME_4_GCD:
                     theGame(new GCD());
                     break;
-                case 5:
+                case GAME_5_PROGRESSION:
                     theGame(new Progression());
                     break;
-                case 6:
+                case GAME_6_PRIME:
                     theGame(new Prime());
                     break;
                 default:

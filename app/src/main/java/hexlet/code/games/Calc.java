@@ -7,6 +7,7 @@ public final class Calc implements Game {
     private int secondOperand;
     private int operandCode;        // 1 for + ; 2 for - ; 3 for * ;
     private String operandStr;
+    private static final int MAX_OPERAND_INDEX = 3;
     public String getHeader() {
         return gameHeader;
     }
@@ -14,7 +15,7 @@ public final class Calc implements Game {
 
         firstOperand = Rand.get();
         secondOperand = Rand.get();
-        operandCode = Rand.get(1, 3);
+        operandCode = Rand.get(1, MAX_OPERAND_INDEX);
 
         if (operandCode == 1) {
             operandStr = "+";
