@@ -15,6 +15,7 @@ public class Engine {
     private static final int GAME_4_GCD = 4;
     private static final int GAME_5_PROGRESSION = 5;
     private static final int GAME_6_PRIME = 6;
+    private static final int GAME_CYCLES = 3;
     private static Scanner consoleScanner = new Scanner(System.in);
     static void theInterface() {
         System.out.println("Please enter the game number and press Enter.");
@@ -61,7 +62,7 @@ public class Engine {
 
         System.out.println(g.getHeader());
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < GAME_CYCLES; i++) {
             System.out.println("Question: " + g.nextQuestion());
             System.out.print("Your answer: ");
             String userAnswer = consoleScanner.next();
