@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public class Rand {
-    static int minRandom = 0;
+    static int minRandom = 1;
     static int maxRandom = 99;
 
     public static int get(int minRandValue, int maxRandValue) {
