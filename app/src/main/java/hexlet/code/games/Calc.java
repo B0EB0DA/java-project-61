@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Rand;
-public class Calc implements Game {
+public final class Calc implements Game {
     private String gameHeader = "What is the result of the expression?";
     private int firstOperand;
     private int secondOperand;

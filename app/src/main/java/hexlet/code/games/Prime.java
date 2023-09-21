@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Rand;
 
-public class Prime implements Game {
+public final class Prime implements Game {
     private String gameHeader = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private int theOperand;
     public String getHeader() {

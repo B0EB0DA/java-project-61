@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Rand;
 
-public class Progression implements Game {
+public final class Progression implements Game {
 
     private String gameHeader = "What number is missing in the progression?";
     private int progrStart;

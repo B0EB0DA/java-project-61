@@ -1,6 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Rand;
-public class Even implements Game {
+public final class Even implements Game {
     private String gameHeader = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private int theOperand;
     public String getHeader() {
