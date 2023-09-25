@@ -1,3 +1,6 @@
+This is "Mind Games" - test and education project (Module 1) by Hexlet "Java Developer" course.
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/B0EB0DA/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/B0EB0DA/java-project-61/actions)
 
