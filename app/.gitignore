@@ -5,7 +5,7 @@ build/
 !**/src/test/**/build/
 
 ### Added by me
-#.idea/
+.idea/
 #build.gradle
 #config/
 #gradle/
