@@ -6,11 +6,21 @@ public final class Even implements Game {
     public String getHeader() {
         return gameHeader;
     }
-    public String nextQuestion() {
+    public String getQuestion() {
         theOperand = Rand.get();
         return String.valueOf(theOperand);
     }
     public String getAnswer() {
         return theOperand % 2 == 0 ? "yes" : "no";
+    }
+
+    public String[] getGameData(int roundsNumber) {
+        String[] bulGameData = new String[1 + 2 * roundsNumber];
+        bulGameData[0] = getHeader();
+        for (int i = 1; i <= roundsNumber * 2; i += 2) {
+            bulGameData[i] = getQuestion();
+            bulGameData[i + 1] = getAnswer();
+        }
+        return bulGameData;
     }
 }

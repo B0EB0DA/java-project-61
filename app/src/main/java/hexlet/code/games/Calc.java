@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Rand;
-public final class Calc implements Game {
+public class Calc implements Game {
     private String gameHeader = "What is the result of the expression?";
     private int firstOperand;
     private int secondOperand;
@@ -11,7 +11,7 @@ public final class Calc implements Game {
     public String getHeader() {
         return gameHeader;
     }
-    public String nextQuestion() {
+    public String getQuestion() {
 
         firstOperand = Rand.get();
         secondOperand = Rand.get();
@@ -37,5 +37,14 @@ public final class Calc implements Game {
                 return String.valueOf(firstOperand * secondOperand);
             }
         }
+    }
+    public String[] getGameData(int roundsNumber) {
+        String [] bulGameData = new String[1 + 2 * roundsNumber];
+        bulGameData[0] = getHeader();
+        for (int i = 1; i <= roundsNumber * 2; i += 2) {
+            bulGameData[i] = getQuestion();
+            bulGameData[i + 1] = getAnswer();
+        }
+        return bulGameData;
     }
 }

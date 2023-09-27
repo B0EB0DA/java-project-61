@@ -19,7 +19,7 @@ public final class Progression implements Game {
     public String getHeader() {
         return gameHeader;
     }
-    public String nextQuestion() {
+    public String getQuestion() {
 
         progrStart = Rand.get(1, MAX_PROGRESSION_START);                                // Progression start number
         progrLength = Rand.get(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);         // Progression length
@@ -42,5 +42,15 @@ public final class Progression implements Game {
     }
     public String getAnswer() {
         return String.valueOf(missingMember);
+    }
+
+    public String[] getGameData(int roundsNumber) {
+        String[] bulGameData = new String[1 + 2 * roundsNumber];
+        bulGameData[0] = getHeader();
+        for (int i = 1; i <= roundsNumber * 2; i += 2) {
+            bulGameData[i] = getQuestion();
+            bulGameData[i + 1] = getAnswer();
+        }
+        return bulGameData;
     }
 }

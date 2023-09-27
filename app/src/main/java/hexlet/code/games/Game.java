@@ -1,6 +1,7 @@
 package hexlet.code.games;
 public interface Game {
     String getHeader();
-    String nextQuestion();
+    String getQuestion();
     String getAnswer();
+    String[] getGameData(int roundsNumber);
 }
