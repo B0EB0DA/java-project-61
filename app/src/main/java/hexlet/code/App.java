@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -11,7 +15,7 @@ public class App {
     private static final int GAME_4_GCD = 4;
     private static final int GAME_5_PROGRESSION = 5;
     private static final int GAME_6_PRIME = 6;
-    private static final Scanner consoleScanner = new Scanner(System.in);
+    private static Scanner consoleScanner = new Scanner(System.in);
     private static final int GAME_CYCLES = 3;
     public static void main(String[] args) {
 

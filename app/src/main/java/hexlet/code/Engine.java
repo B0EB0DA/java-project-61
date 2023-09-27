@@ -2,9 +2,10 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class Engine {
+    private static final int MIN_GAMEDATA_LENGTH = 3;
     static void startGame(String[] bulkGameData, String userName, Scanner consoleScanner) {
 
-        if (bulkGameData.length >= 3) {             // We have at least one round
+        if (bulkGameData.length >= MIN_GAMEDATA_LENGTH) {             // We have at least one round
 
             System.out.println(bulkGameData[0]);
 
