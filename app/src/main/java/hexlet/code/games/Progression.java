@@ -15,12 +15,17 @@ public final class Progression {
     public static void startGame(Scanner consoleScanner) {
         String[][] gameData = new String[GAME_CYCLES][];
         for (int i = 0; i < GAME_CYCLES; i++) {
-            int progrStart = Rand.get(1, MAX_PROGRESSION_START);                                // Progression start number;
-            int progrLength = Rand.get(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);         // Progression length;
-            int progrStep = Rand.get(2, MAX_PROGRESSION_STEP);                                  // Progression step;
-            int missingMemberIndex = Rand.get(1, progrLength - 2);                              // Progression missing member index,
-                                                                                                // exclude first and last members (zero-based);
-            int missingMember = progrStart + missingMemberIndex * progrStep;                    // Progression missing member value;
+            int progrStart = Rand.get(1, MAX_PROGRESSION_START);
+            // Progression start number;
+            int progrLength = Rand.get(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
+            // Progression length;
+            int progrStep = Rand.get(2, MAX_PROGRESSION_STEP);
+            // Progression step;
+            int missingMemberIndex = Rand.get(1, progrLength - 2);
+            // Progression missing member index
+            // exclude first and last members (zero-based);
+            int missingMember = progrStart + missingMemberIndex * progrStep;
+            // Progression missing member value;
 
             String[] questionAndAnswer = new String[2];
             StringBuilder sb = new StringBuilder(String.valueOf(progrStart));

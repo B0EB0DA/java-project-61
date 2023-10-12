@@ -48,6 +48,9 @@ public class App {
                 break;
             case GAME_6_PRIME:
                 Prime.startGame(consoleScanner);
+                break;
+            default:
+                break;
         }
         consoleScanner.close();
     }
