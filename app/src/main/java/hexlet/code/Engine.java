@@ -2,18 +2,23 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class Engine {
-    private static final int MIN_GAMEDATA_LENGTH = 3;
-    static void startGame(String[] bulkGameData, String userName, Scanner consoleScanner) {
 
-        if (bulkGameData.length >= MIN_GAMEDATA_LENGTH) {             // We have at least one round
+    public static void runGame(String gameHeader, String[][] gameData, Scanner consoleScanner) {
 
-            System.out.println(bulkGameData[0]);
+        System.out.println();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = consoleScanner.next();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(gameHeader);
 
-            for (int i = 1; i <= bulkGameData.length - 1; i += 2) {
-                System.out.println("Question: " + bulkGameData[i]);
+        for (String[] questionAndAnswer : gameData) {
+            if (questionAndAnswer.length == 2) {
+                String gameQuestion = questionAndAnswer[0];
+                String correctAnswer = questionAndAnswer[1];
+                System.out.println("Question: " + gameQuestion);
                 System.out.print("Your answer: ");
                 String userAnswer = consoleScanner.next();
-                String correctAnswer = bulkGameData[i + 1];
                 if (userAnswer.equalsIgnoreCase(correctAnswer)) {
                     System.out.println("Correct!");
                 } else {
@@ -24,8 +29,8 @@ public class Engine {
                     return;
                 }
             }
-            System.out.println("Congratulations, " + userName + "!");
-            System.out.println();
         }
+        System.out.println("Congratulations, " + userName + "!");
+        System.out.println();
     }
 }

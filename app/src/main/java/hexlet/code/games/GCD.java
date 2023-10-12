@@ -1,45 +1,37 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import hexlet.code.Rand;
+import java.util.Scanner;
 
-public final class GCD implements Game {
-    private String gameHeader = "Find the greatest common divisor of given numbers.";
-    private int firstOperand;
-    private int secondOperand;
-    public String getHeader() {
-        return gameHeader;
-    }
-    public String getQuestion() {
-        firstOperand = Rand.get();
-        secondOperand = Rand.get();
-        return String.valueOf(firstOperand) + " " + String.valueOf(secondOperand);
-    }
-    public String getAnswer() {
-
-        int op1 = firstOperand;
-        int op2 = secondOperand;
-
+public final class GCD {
+    private static String gameHeader = "Find the greatest common divisor of given numbers.";
+    private static final int GAME_CYCLES = 3;
+    public static int getGCD(int firstOperand, int secondOperand) {
         while (true) {
-            if (op1 > op2) {
-                op1 = op1 % op2;
-                if (op1 == 0) {
-                    return String.valueOf(op2);
+            if (firstOperand > secondOperand) {
+                firstOperand = firstOperand % secondOperand;
+                if (firstOperand == 0) {
+                    return secondOperand;
                 }
             } else {
-                op2 = op2 % op1;
-                if (op2 == 0) {
-                    return String.valueOf(op1);
+                secondOperand = secondOperand % firstOperand;
+                if (secondOperand == 0) {
+                    return firstOperand;
                 }
             }
         }
     }
-    public String[] getGameData(int roundsNumber) {
-        String[] bulGameData = new String[1 + 2 * roundsNumber];
-        bulGameData[0] = getHeader();
-        for (int i = 1; i <= roundsNumber * 2; i += 2) {
-            bulGameData[i] = getQuestion();
-            bulGameData[i + 1] = getAnswer();
+    public static void startGame(Scanner consoleScanner) {
+        String[][] gameData = new String[GAME_CYCLES][];
+        for (int i = 0; i < GAME_CYCLES; i++) {
+            int firstOperand = Rand.get();
+            int secondOperand = Rand.get();
+            String[] questionAndAnswer = new String[2];
+            questionAndAnswer[0] = String.valueOf(firstOperand) + " " + String.valueOf(secondOperand);
+            questionAndAnswer[1] = String.valueOf(getGCD(firstOperand, secondOperand));
+            gameData[i] = questionAndAnswer;
         }
-        return bulGameData;
+        Engine.runGame(gameHeader, gameData, consoleScanner);
     }
 }
