@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Rand;
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public final class Prime {
@@ -10,8 +10,9 @@ public final class Prime {
     private static final int MIN_VALUE = 10;
     private static final int MAX_VALUE = 999;
     private static final int PRIME_3 = 3;
+
     public static boolean isPrime(int n) {
-        if (n % 2 == 0) {
+        if (n % 2 == 0 || n < 2) {
             return false;
         }
         for (int i = PRIME_3; i <= Math.sqrt(n); i += 2) {
@@ -21,10 +22,11 @@ public final class Prime {
         }
         return true;
     }
+
     public static void startGame(Scanner consoleScanner) {
         String[][] gameData = new String[GAME_CYCLES][];
         for (int i = 0; i < GAME_CYCLES; i++) {
-            int theOperand = Rand.get(MIN_VALUE, MAX_VALUE);
+            int theOperand = Utils.getRandom(MIN_VALUE, MAX_VALUE);
             String[] questionAndAnswer = new String[2];
             questionAndAnswer[0] = String.valueOf(theOperand);
             questionAndAnswer[1] = isPrime(theOperand) ? "yes" : "no";

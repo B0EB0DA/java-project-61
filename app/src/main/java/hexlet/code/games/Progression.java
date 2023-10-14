@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Rand;
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public final class Progression {
@@ -12,32 +12,36 @@ public final class Progression {
     private static final int MAX_PROGRESSION_LENGTH = 10;
     private static final int MAX_PROGRESSION_STEP = 9;
 
+    private static String getProgressionString(int progrStart, int progrLength, int progrStep, int missingMember) {
+        StringBuilder sb = new StringBuilder(String.valueOf(progrStart));
+        for (int j = progrStart + progrStep; j < progrStart + progrLength * progrStep; j += progrStep) {
+            if (j == missingMember) {
+                sb.append(" ..");
+            } else {
+                sb.append(" ");
+                sb.append(String.valueOf(j));
+            }
+        }
+        return sb.toString();
+    }
+
     public static void startGame(Scanner consoleScanner) {
         String[][] gameData = new String[GAME_CYCLES][];
         for (int i = 0; i < GAME_CYCLES; i++) {
-            int progrStart = Rand.get(1, MAX_PROGRESSION_START);
+            int progrStart = Utils.getRandom(1, MAX_PROGRESSION_START);
             // Progression start number;
-            int progrLength = Rand.get(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
+            int progrLength = Utils.getRandom(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
             // Progression length;
-            int progrStep = Rand.get(2, MAX_PROGRESSION_STEP);
+            int progrStep = Utils.getRandom(2, MAX_PROGRESSION_STEP);
             // Progression step;
-            int missingMemberIndex = Rand.get(1, progrLength - 2);
+            int missingMemberIndex = Utils.getRandom(1, progrLength - 2);
             // Progression missing member index
             // exclude first and last members (zero-based);
             int missingMember = progrStart + missingMemberIndex * progrStep;
             // Progression missing member value;
 
             String[] questionAndAnswer = new String[2];
-            StringBuilder sb = new StringBuilder(String.valueOf(progrStart));
-            for (int j = progrStart + progrStep; j < progrStart + progrLength * progrStep; j += progrStep) {
-                if (j == missingMember) {
-                    sb.append(" ..");
-                } else {
-                    sb.append(" ");
-                    sb.append(String.valueOf(j));
-                }
-            }
-            questionAndAnswer[0] = sb.toString();
+            questionAndAnswer[0] = getProgressionString(progrStart, progrLength, progrStep, missingMember);
             questionAndAnswer[1] = String.valueOf(missingMember);
             gameData[i] = questionAndAnswer;
         }

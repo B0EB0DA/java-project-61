@@ -1,8 +1,8 @@
 package hexlet.code;
 
 import java.util.Scanner;
-public class Engine {
 
+public class Engine {
     public static void runGame(String gameHeader, String[][] gameData, Scanner consoleScanner) {
 
         System.out.println();
@@ -31,6 +31,5 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + userName + "!");
-        System.out.println();
     }
 }

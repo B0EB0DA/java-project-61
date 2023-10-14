@@ -1,13 +1,14 @@
 package hexlet.code;
 
-public class Rand {
+public class Utils {
     static final int MIN_RANDOM = 1;
     static final int MAX_RANDOM = 99;
 
-    public static int get(int minRandValue, int maxRandValue) {
+    public static int getRandom(int minRandValue, int maxRandValue) {
         return minRandValue + (int) (Math.random() * ((maxRandValue - minRandValue) + 1));
     }
-    public static int get() {
-        return get(MIN_RANDOM, MAX_RANDOM);
+
+    public static int getRandom() {
+        return getRandom(MIN_RANDOM, MAX_RANDOM);
     }
 }
