@@ -27,7 +27,8 @@ public final class Calc {
             char[] operationTypes = new char[] {'+', '-', '*'};
             char operandSign = operationTypes[Utils.getRandom(0, MAX_OPERAND_INDEX)];
             String[] questionAndAnswer = new String[2];
-            questionAndAnswer[0] = String.valueOf(firstOperand) + " " + operandSign + " " + String.valueOf(secondOperand);
+            questionAndAnswer[0] = String.valueOf(firstOperand) + " " + operandSign + " "
+                    + String.valueOf(secondOperand);
             questionAndAnswer[1] = String.valueOf(getCalcResult(firstOperand, secondOperand, operandSign));
             gameData[i] = questionAndAnswer;
         }
