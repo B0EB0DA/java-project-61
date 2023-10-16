@@ -8,7 +8,7 @@ public final class Calc {
     private static String gameHeader = "What is the result of the expression?";
     private static final int MAX_OPERAND_INDEX = 2;                                 // index in array, zero based
     private static final int GAME_CYCLES = 3;
-    private static final char[] operationTypes = new char[] {'+', '-', '*'};
+    private static final char[] OPERATION_TYPES = new char[] {'+', '-', '*'};
 
     private static int getCalcResult(int operand1, int operand2, char operation) throws Exception {
 
@@ -29,7 +29,7 @@ public final class Calc {
         for (int i = 0; i < GAME_CYCLES; i++) {
             int firstOperand = Utils.getRandom();
             int secondOperand = Utils.getRandom();
-            char operandSign = operationTypes[Utils.getRandom(0, MAX_OPERAND_INDEX)];
+            char operandSign = OPERATION_TYPES[Utils.getRandom(0, MAX_OPERAND_INDEX)];
             String[] questionAndAnswer = new String[2];
             questionAndAnswer[0] = String.valueOf(firstOperand) + " " + operandSign + " "
                     + String.valueOf(secondOperand);
