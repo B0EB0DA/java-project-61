@@ -25,12 +25,18 @@ public final class Progression {
 
     private static String getProgressionString(List<Integer> progressionArray, int missingMember) {
         StringBuilder sb = new StringBuilder();
+        boolean isFirstElement = true;
         for (int progrMember : progressionArray) {
-            if (progrMember == missingMember) {
-                sb.append(" ..");
+            if (isFirstElement) {
+                sb.append(String.valueOf(progrMember));             // Missing element can't be first
+                isFirstElement = false;
             } else {
-                sb.append(" ");
-                sb.append(String.valueOf(progrMember));
+                if (progrMember == missingMember) {
+                    sb.append(" ..");
+                } else {
+                    sb.append(" ");
+                    sb.append(String.valueOf(progrMember));
+                }
             }
         }
         return sb.toString();
