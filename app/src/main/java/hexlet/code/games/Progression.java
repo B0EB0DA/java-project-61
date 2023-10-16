@@ -2,6 +2,9 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public final class Progression {
@@ -12,14 +15,22 @@ public final class Progression {
     private static final int MAX_PROGRESSION_LENGTH = 10;
     private static final int MAX_PROGRESSION_STEP = 9;
 
-    private static String getProgressionString(int progrStart, int progrLength, int progrStep, int missingMember) {
-        StringBuilder sb = new StringBuilder(String.valueOf(progrStart));
-        for (int j = progrStart + progrStep; j < progrStart + progrLength * progrStep; j += progrStep) {
-            if (j == missingMember) {
+    private static List<Integer> getProgressionArray(int progrStart, int progrLength, int progrStep) {
+        List<Integer> ret = new ArrayList<>();
+        for (int i = progrStart; i < progrStart + progrLength * progrStep; i += progrStep) {
+            ret.add(i);
+        }
+        return ret;
+    }
+
+    private static String getProgressionString(List<Integer> progressionArray, int missingMember) {
+        StringBuilder sb = new StringBuilder();
+        for (int progrMember : progressionArray) {
+            if (progrMember == missingMember) {
                 sb.append(" ..");
             } else {
                 sb.append(" ");
-                sb.append(String.valueOf(j));
+                sb.append(String.valueOf(progrMember));
             }
         }
         return sb.toString();
@@ -41,7 +52,8 @@ public final class Progression {
             // Progression missing member value;
 
             String[] questionAndAnswer = new String[2];
-            questionAndAnswer[0] = getProgressionString(progrStart, progrLength, progrStep, missingMember);
+            List<Integer> progressionArray = getProgressionArray(progrStart, progrLength, progrStep);
+            questionAndAnswer[0] = getProgressionString(progressionArray, missingMember);
             questionAndAnswer[1] = String.valueOf(missingMember);
             gameData[i] = questionAndAnswer;
         }

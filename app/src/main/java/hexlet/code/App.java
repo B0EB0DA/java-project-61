@@ -16,7 +16,7 @@ public class App {
     private static final int GAME_6_PRIME = 6;
     private static Scanner consoleScanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
