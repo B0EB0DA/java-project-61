@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public final class Progression {
