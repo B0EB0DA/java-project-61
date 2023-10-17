@@ -15,27 +15,25 @@ public final class Progression {
     private static final int MAX_PROGRESSION_LENGTH = 10;
     private static final int MAX_PROGRESSION_STEP = 9;
 
-    private static List<Integer> getProgressionArray(int progrStart, int progrLength, int progrStep) {
-        List<Integer> ret = new ArrayList<>();
-        for (int i = progrStart; i < progrStart + progrLength * progrStep; i += progrStep) {
-            ret.add(i);
+    private static int[] generateProgressionArray(int progrStart, int progrLength, int progrStep) {
+        int[] ret = new int[progrLength];
+        for (int i = 0; i < progrLength; i++) {
+            ret[i] = progrStart + progrStep * i;
         }
         return ret;
     }
 
-    private static String getProgressionString(List<Integer> progressionArray, int missingMember) {
+    private static String getProgressionString(int[] progressionArray, int missingMember) {
         StringBuilder sb = new StringBuilder();
-        boolean isFirstElement = true;
-        for (int progrMember : progressionArray) {
-            if (isFirstElement) {
-                sb.append(String.valueOf(progrMember));             // Missing element can't be first
-                isFirstElement = false;
+        for (int i = 0; i < progressionArray.length; i++) {
+            if (i == 0) {
+                sb.append(String.valueOf(progressionArray[i]));             // Missing element can't be first
             } else {
-                if (progrMember == missingMember) {
+                if (progressionArray[i] == missingMember) {
                     sb.append(" ..");
                 } else {
                     sb.append(" ");
-                    sb.append(String.valueOf(progrMember));
+                    sb.append(String.valueOf(progressionArray[i]));
                 }
             }
         }
@@ -58,7 +56,7 @@ public final class Progression {
             // Progression missing member value;
 
             String[] questionAndAnswer = new String[2];
-            List<Integer> progressionArray = getProgressionArray(progrStart, progrLength, progrStep);
+            int[] progressionArray = generateProgressionArray(progrStart, progrLength, progrStep);
             questionAndAnswer[0] = getProgressionString(progressionArray, missingMember);
             questionAndAnswer[1] = String.valueOf(missingMember);
             gameData[i] = questionAndAnswer;
